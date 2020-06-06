@@ -13,9 +13,7 @@
   {
     "name": "production",
     "type": "mongodb",
-    "host": "mongodb+srv://sadeploy:wG9N2hxXfEMVPxv1@cluster0-hiufg.mongodb.net/sejaantirracista?retryWrites=true&w=majority",
-    "port": 27017,
-    "database": "sejaantirracista",
+    "url": "mongodb+srv://sadeploy:wG9N2hxXfEMVPxv1@cluster0-hiufg.mongodb.net/<dbname>?retryWrites=true&w=majority",
     "useUnifiedTopology": true,
     "entities": [
       "./src/modules/**/infra/typeorm/schemas/*.ts"
