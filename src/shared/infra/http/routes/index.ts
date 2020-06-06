@@ -15,6 +15,7 @@ routes.post('/records', async (request, response) => {
 
 routes.put('/records', async (request, response) => {
   const recordsRepository = new RecordsRepository();
+
   const { name, value } = request.body;
 
   const record = await recordsRepository.update(name, value);
@@ -22,7 +23,7 @@ routes.put('/records', async (request, response) => {
   return response.json(record);
 });
 
-routes.get('/records:name', async (request, response) => {
+routes.get('/records', async (request, response) => {
   const name = request.query.name?.toString();
 
   const recordsRepository = new RecordsRepository();
