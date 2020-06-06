@@ -13,7 +13,7 @@
   {
     "name": "production",
     "type": "mongodb",
-    "url": "mongodb+srv://sadeploy:wG9N2hxXfEMVPxv1@cluster0-hiufg.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "url": "mongodb+srv://sadeploy:wG9N2hxXfEMVPxv1@cluster0-hiufg.mongodb.net/sejaantirracista",
     "useUnifiedTopology": true,
     "entities": [
       "./src/modules/**/infra/typeorm/schemas/*.ts"
