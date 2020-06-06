@@ -6,18 +6,18 @@ const routes = Router();
 
 routes.post('/records', async (request, response) => {
   const recordsRepository = new RecordsRepository();
-  const { value } = request.body;
+  const { name, value } = request.body;
 
-  const record = await recordsRepository.create(value);
+  const record = await recordsRepository.create(name, value);
 
   return response.json(record);
 });
 
 routes.put('/records', async (request, response) => {
   const recordsRepository = new RecordsRepository();
-  const { value } = request.body;
+  const { name, value } = request.body;
 
-  const record = await recordsRepository.update(value);
+  const record = await recordsRepository.update(name, value);
 
   return response.json(record);
 });

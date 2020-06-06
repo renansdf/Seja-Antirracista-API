@@ -10,25 +10,25 @@ class RecordsRepository implements IRecordsRepository {
     this.ormRepository = getMongoRepository(Record);
   }
 
-  public async create(value: number): Promise<Record> {
-    let record = await this.ormRepository.findOne();
+  public async create(name: string, value: number): Promise<Record> {
+    let record = await this.ormRepository.findOne({ where: { name } });
 
     if (record) {
       return record;
     }
 
-    record = this.ormRepository.create({ value });
+    record = this.ormRepository.create({ name, value });
 
     await this.ormRepository.save(record);
 
     return record;
   }
 
-  public async update(value?: number): Promise<Record> {
-    let record = await this.ormRepository.findOne();
+  public async update(name: string, value?: number): Promise<Record> {
+    let record = await this.ormRepository.findOne({ where: { name } });
 
     if (!record) {
-      record = this.ormRepository.create({ value });
+      record = this.ormRepository.create({ name, value });
     } else {
       if (value) {
         record.value = value;

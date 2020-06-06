@@ -6,6 +6,9 @@ class Record {
   id: ObjectID;
 
   @Column()
+  name: string;
+
+  @Column()
   value: number;
 
   @CreateDateColumn()
