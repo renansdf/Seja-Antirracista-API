@@ -2,7 +2,6 @@
   "name": "sejaantirracista",
   "version": "1.0.0",
   "main": "src/shared/infra/http/server.ts",
-  "type": "module",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
