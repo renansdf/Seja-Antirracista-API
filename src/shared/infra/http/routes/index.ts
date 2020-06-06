@@ -22,8 +22,8 @@ routes.put('/records', async (request, response) => {
   return response.json(record);
 });
 
-routes.get('/records', async (request, response) => {
-  const { name } = request.body;
+routes.get('/records:name', async (request, response) => {
+  const name = request.query.name?.toString();
 
   const recordsRepository = new RecordsRepository();
 
