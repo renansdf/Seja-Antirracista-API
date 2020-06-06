@@ -23,9 +23,11 @@ routes.put('/records', async (request, response) => {
 });
 
 routes.get('/records', async (request, response) => {
+  const { name } = request.body;
+
   const recordsRepository = new RecordsRepository();
 
-  const record = await recordsRepository.index();
+  const record = await recordsRepository.show(name);
 
   return response.json(record);
 });

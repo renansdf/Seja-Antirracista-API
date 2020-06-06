@@ -42,9 +42,9 @@ class RecordsRepository implements IRecordsRepository {
     return record;
   }
 
-  public async index(): Promise<Record[]> {
-    const records = await this.ormRepository.find();
-    return records;
+  public async show(name: string): Promise<Record | undefined> {
+    const record = await this.ormRepository.findOne({ where: { name } });
+    return record;
   }
 
 }
