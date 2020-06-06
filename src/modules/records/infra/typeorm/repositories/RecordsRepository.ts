@@ -7,7 +7,7 @@ class RecordsRepository implements IRecordsRepository {
   private ormRepository: MongoRepository<Record>;
 
   constructor() {
-    this.ormRepository = getMongoRepository(Record, 'production');
+    this.ormRepository = getMongoRepository(Record);
   }
 
   public async create(value: number): Promise<Record> {
